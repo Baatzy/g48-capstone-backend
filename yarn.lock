@@ -411,6 +411,10 @@ expand-tilde@^1.2.2:
   dependencies:
     os-homedir "^1.0.1"
 
+express-partials@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/express-partials/-/express-partials-0.3.0.tgz#88b9c40164afd9a55278629b2948e6ace7bff45f"
+
 express@~4.15.2:
   version "4.15.3"
   resolved "https://registry.yarnpkg.com/express/-/express-4.15.3.tgz#bab65d0f03aa80c358408972fc700f916944b662"
