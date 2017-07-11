@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const ctrl = require('../controllers/users')
+const ctrl = require('../controllers/protocols')
 
 router.get('/', ctrl.index)
 router.get('/new', ctrl.newForm)

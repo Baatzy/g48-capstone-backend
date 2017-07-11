@@ -8,10 +8,12 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 
 const index = require('./routes/index');
+
 // const users = require('./routes/users');
 // const profiles = require('./routes/profiles');
-// const workouts = require('./routes/workouts');
+// const workouts = require('./routes/protocols');
 // const logbooks = require('./routes/logbooks');
+
 // const usersWorkouts = require('./routes/users_workouts');
 // const usersUsers = require('./routes/users_users');
 
@@ -27,10 +29,12 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
+
 // app.use('/', users);
 // app.use('/', profiles);
 // app.use('/', workouts);
 // app.use('/', logbooks);
+
 // app.use('/', users_workouts);
 // app.use('/', users_users);
 
