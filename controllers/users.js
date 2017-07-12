@@ -7,8 +7,7 @@ async function index (req, res, next) {
   try {
     users = await User.indexAll()
     res.send({ users })
-  }
-  catch (err) {
+  } catch (err) {
     res.send(err)
   }
 }
@@ -20,8 +19,7 @@ async function show (req, res, next) {
   try {
     user = await User.showById(id)
     res.send({ user })
-  }
-  catch (err) {
+  } catch (err) {
     res.send(err)
   }
 }
@@ -37,8 +35,7 @@ async function create (req, res, next) {
   try {
     user = await User.postNew(newUser)
     res.send({ user })
-  }
-  catch (err) {
+  } catch (err) {
     res.send(err)
   }
 }
@@ -51,9 +48,9 @@ async function update (req, res, next) {
     password: req.body.password,
     first_name: req.body['first_name'],
     last_name: req.body['last_name'],
-    age: req.body[age],
-    location: req.body[location],
-    bio: req.body[bio],
+    age: req.body.age,
+    location: req.body.location,
+    bio: req.body.bio,
     max_boulder: req.body['max_boulder'],
     max_sport: req.body['max_sport'],
     max_trad: req.body['max_trad'],
@@ -61,10 +58,9 @@ async function update (req, res, next) {
   let user
 
   try {
-    user = await User.editById(id, updatedPark)
+    user = await User.editById(id, updatedUser)
     res.send({ user })
-  }
-  catch (err) {
+  } catch (err) {
     res.send(err)
   }
 }
