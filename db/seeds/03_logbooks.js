@@ -3,7 +3,7 @@ exports.seed = (knex) => {
     {
       id: 1,
       user_id: 1,
-      json_logbook: {
+      json_logbook: JSON.stringify({
         mainFocus: 'Strength and power',
         schedule: [
           {
@@ -31,7 +31,7 @@ exports.seed = (knex) => {
             completed: null
           }
         ]
-      }
+      })
     },
   ]).then(() => {
     return knex.raw(

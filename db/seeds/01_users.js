@@ -18,7 +18,7 @@ exports.seed = (knex) => {
     {
       id: 2,
       username: 'User2',
-      email: 'a@a.com',
+      email: 'b@b.com',
       password: 'asdf',
       first_name: 'Alex',
       last_name: 'Puccio',
@@ -33,7 +33,7 @@ exports.seed = (knex) => {
     {
       id: 3,
       username: 'User3',
-      email: 'a@a.com',
+      email: 'c@c.com',
       password: 'asdf',
       first_name: 'Alex',
       last_name: 'Megos',
