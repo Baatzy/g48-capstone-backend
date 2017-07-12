@@ -58,21 +58,23 @@ async function update (req, res, next) {
   let user
 
   try {
-    user = await User.editById(id, updatedUser)
+    user = await User.patchById(id, updatedUser)
     res.send({ user })
   } catch (err) {
     res.send(err)
   }
 }
 
-function destroy (req, res, next) {
+async function destroy (req, res, next) {
   const id = req.params.id
+  let deletedUser
 
-  Ride.destroyParkRides(id)
-  .then(() => {
-    Park.destroy(id)
-    .then(() => res.redirect('/parks'))
-  })
+  try {
+    deletedUser = await User.deleteById(id)
+    res.send({ deletedUser })
+  } catch (err) {
+    res.send(err)
+  }
 }
 
 module.exports = { index, show, create, update, destroy }

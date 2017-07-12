@@ -15,12 +15,12 @@ class User {
     return db('users').insert(body, '*')
   }
 
-  static editById (id, body) {
+  static patchById (id, body) {
     return db('users').update(body, '*').where({ id })
   }
 
   static deleteById (id) {
-    return db('users').del().where({ id })
+    return db('users').del().where({ id }).returning('*')
   }
 }
 
