@@ -1,0 +1,38 @@
+exports.seed = (knex) => {
+  return knex('protocols').insert([
+    {
+      id: 1,
+      user_id: 1,
+      json_protocol: {
+        name: '10 sec max hangs',
+        category: 'Strength',
+        muscleGroup: 'Fingers',
+        duration: 30,
+        description: 'Using a 18-22 mm edge, perform a 10 sec hang with half-crimp form at a weight that you could theoretically hang for 13 sec. Rest 3-5 min between hangs. Complete 3-5 hangs, performing hangs using straight arms and activated shoulders.'
+      },
+      json_upvotes: [
+        {userId: 1, username: 'Baatzy'}
+      ],
+      json_downvotes: []
+    },
+    {
+      id: 2,
+      user_id: 2,
+      json_protocol: {
+        name: 'Weighted pull-ups',
+        category: 'Strength',
+        muscleGroup: 'Upper body',
+        duration: 20,
+        description: 'Using a pull up bar, determine your 1RM with added weight. Using the total value of your body weight plus your added 1RM weight, perform 5 reps at 80% that total weight. Rest 5 minutes. Repeat for 2-3 total sets. Maintain 1.5x shoulder-width hand spacing, make sure to retract and pull down your shoulders to stablize your humeral head positions, and strive for a complete pulling motion from a near straight arm at the bottom of the rep to full head above the bar at the top of the rep.'
+      },
+      json_upvotes: [],
+      json_downvotes: [
+        {userId: 1, username: 'Baatzy'}
+      ]
+    }
+  ]).then(() => {
+    return knex.raw(
+      "SELECT setval('protocols_id_seq', (SELECT MAX(id) FROM protocols));"
+    )
+  })
+}

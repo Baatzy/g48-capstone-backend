@@ -3,6 +3,7 @@ exports.up = (knex) => {
     table.increments()
     table.integer('user1_id').notNullable()
     table.integer('user2_id').notNullable()
+    table.boolean('confirmed').notNullable()
     table.timestamps(true, true)
   })
 }
