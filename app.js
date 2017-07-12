@@ -8,8 +8,7 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 
 const index = require('./routes/index');
-
-// const users = require('./routes/users');
+const users = require('./routes/users');
 // const protocols = require('./routes/protocols');
 // const logbooks = require('./routes/logbooks');
 
@@ -25,8 +24,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
-
-// app.use('/', users);
+app.use('/', users);
 // app.use('/', protocols);
 // app.use('/', logbooks);
 
