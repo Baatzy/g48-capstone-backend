@@ -18,7 +18,7 @@ async function show (req, res, next) {
 
   try {
     protocol = await Protocol.showById(id)
-    protocol = protocol[0]
+    protocol = protocol[0]['json_protocol']
     console.log(protocol['json_protocol']);
     // protocol['json_protocol'] = JSON.parse(protocol['json_protocol'])
     // protocol['json_upvotes'] = JSON.parse(protocol['json_upvotes'])
