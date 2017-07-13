@@ -18,8 +18,12 @@ async function show (req, res, next) {
 
   try {
     protocol = await Protocol.showById(id)
-    // ++++++++++++++++++++++++++++++++++++++++
-    protocol = protocol[0]["json_protocol"]
+    protocol = protocol[0]
+    console.log(protocol['json_protocol']);
+    // protocol['json_protocol'] = JSON.parse(protocol['json_protocol'])
+    // protocol['json_upvotes'] = JSON.parse(protocol['json_upvotes'])
+    // protocol['json_downvotes'] = JSON.parse(protocol['json_downvotes'])
+    // console.log("Second log", protocol);
     res.send({ protocol })
   } catch (err) {
     res.send(err)
@@ -30,7 +34,6 @@ async function create (req, res, next) {
   let protocol
   const newProtocol = {
     user_id: req.body['user_id'],
-    // ++++++++++++++++++++++++++++++++++++++++
     json_protocol: JSON.stringify(req.body['json_protocol']),
     json_upvotes: JSON.stringify([]),
     json_downvotes: JSON.stringify([]),
