@@ -13,8 +13,8 @@ async function index (req, res, next) {
 }
 
 async function show (req, res, next) {
-  const id = req.params.id
   let user
+  const id = req.params.id
 
   try {
     user = await User.showById(id)
@@ -25,12 +25,12 @@ async function show (req, res, next) {
 }
 
 async function create (req, res, next) {
+  let user
   const newUser = {
     username: req.body.username,
     email: req.body.email,
     password: req.body.password
   }
-  let user
 
   try {
     user = await User.postNew(newUser)
@@ -41,6 +41,7 @@ async function create (req, res, next) {
 }
 
 async function update (req, res, next) {
+  let user
   const id = req.params.id
   const updatedUser = {
     username: req.body.username,
@@ -55,7 +56,6 @@ async function update (req, res, next) {
     max_sport: req.body['max_sport'],
     max_trad: req.body['max_trad'],
   }
-  let user
 
   try {
     user = await User.patchById(id, updatedUser)
@@ -66,8 +66,8 @@ async function update (req, res, next) {
 }
 
 async function destroy (req, res, next) {
-  const id = req.params.id
   let deletedUser
+  const id = req.params.id
 
   try {
     deletedUser = await User.deleteById(id)
