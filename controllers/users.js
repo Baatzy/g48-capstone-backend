@@ -1,4 +1,5 @@
 const User = require('../models/users')
+const Logbook = require('../models/logbooks')
 const Utilties = require('./utilities')
 
 async function index (req, res, next) {
@@ -6,7 +7,7 @@ async function index (req, res, next) {
 
   try {
     users = await User.indexAll()
-    res.send({ users })
+    res.send(users)
   } catch (err) {
     res.send(err)
   }
@@ -18,12 +19,13 @@ async function show (req, res, next) {
 
   try {
     user = await User.showById(id)
-    res.send({ user })
+    res.send(user)
   } catch (err) {
     res.send(err)
   }
 }
 
+// Need to POST corresponding logbook on POST of new user *****************
 async function create (req, res, next) {
   let user
   const newUser = {
@@ -34,7 +36,7 @@ async function create (req, res, next) {
 
   try {
     user = await User.postNew(newUser)
-    res.send({ user })
+    res.send(user)
   } catch (err) {
     res.send(err)
   }
@@ -59,7 +61,7 @@ async function update (req, res, next) {
 
   try {
     user = await User.patchById(id, updatedUser)
-    res.send({ user })
+    res.send(user)
   } catch (err) {
     res.send(err)
   }
@@ -71,7 +73,7 @@ async function destroy (req, res, next) {
 
   try {
     deletedUser = await User.deleteById(id)
-    res.send({ deletedUser })
+    res.send(deletedUser)
   } catch (err) {
     res.send(err)
   }

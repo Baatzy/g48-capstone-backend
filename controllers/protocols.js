@@ -6,7 +6,7 @@ async function index (req, res, next) {
 
   try {
     protocols = await Protocol.indexAll()
-    res.send({ protocols })
+    res.send(protocols)
   } catch (err) {
     res.send(err)
   }
@@ -18,13 +18,7 @@ async function show (req, res, next) {
 
   try {
     protocol = await Protocol.showById(id)
-    protocol = protocol[0]['json_protocol']
-    console.log(protocol['json_protocol']);
-    // protocol['json_protocol'] = JSON.parse(protocol['json_protocol'])
-    // protocol['json_upvotes'] = JSON.parse(protocol['json_upvotes'])
-    // protocol['json_downvotes'] = JSON.parse(protocol['json_downvotes'])
-    // console.log("Second log", protocol);
-    res.send({ protocol })
+    res.send(protocol)
   } catch (err) {
     res.send(err)
   }
@@ -34,6 +28,7 @@ async function create (req, res, next) {
   let protocol
   const newProtocol = {
     user_id: req.body['user_id'],
+    // Need to fix *********************************************************
     json_protocol: JSON.stringify(req.body['json_protocol']),
     json_upvotes: JSON.stringify([]),
     json_downvotes: JSON.stringify([]),
@@ -41,7 +36,7 @@ async function create (req, res, next) {
 
   try {
     protocol = await Protocol.postNew(newProtocol)
-    res.send({ protocol })
+    res.send(protocol)
   } catch (err) {
     res.send(err)
   }
@@ -59,7 +54,7 @@ async function update (req, res, next) {
 
   try {
     protocol = await Protocol.patchById(id, updatedProtocol)
-    res.send({ updatedProtocol })
+    res.send(protocol)
   } catch (err) {
     res.send(err)
   }
@@ -71,7 +66,7 @@ async function destroy (req, res, next) {
 
   try {
     deletedProtocol = await Protocol.deleteById(id)
-    res.send({ deletedProtocol })
+    res.send(deletedProtocol)
   } catch (err) {
     res.send(err)
   }

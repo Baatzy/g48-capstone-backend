@@ -10,7 +10,7 @@ const bodyParser = require('body-parser');
 const index = require('./routes/index');
 const users = require('./routes/users');
 const protocols = require('./routes/protocols');
-// const logbooks = require('./routes/logbooks');
+const logbooks = require('./routes/logbooks');
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -27,7 +27,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
 app.use('/', users);
 app.use('/', protocols);
-// app.use('/', logbooks);
+app.use('/', logbooks);
 
 // Catch 404 and forward to error handler
 app.use(function(req, res, next) {
