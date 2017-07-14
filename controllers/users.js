@@ -25,17 +25,23 @@ async function show (req, res, next) {
   }
 }
 
-// Need to POST corresponding logbook on POST of new user *****************
 async function create (req, res, next) {
   let user
+  let logbook
   const newUser = {
     username: req.body.username,
     email: req.body.email,
     password: req.body.password
   }
+  const newLogbook = {
+    user_id: null,
+    json_logbook: {},
+  }
 
   try {
     user = await User.postNew(newUser)
+    newLogbook['user_id'] = user[0].id
+    logbook = await Logbook.postNew(newLogbook)
     res.send(user)
   } catch (err) {
     res.send(err)
