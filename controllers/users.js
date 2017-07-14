@@ -35,7 +35,7 @@ async function create (req, res, next) {
   }
   const newLogbook = {
     user_id: null,
-    json_logbook: {},
+    json_logbook: {data: null},
   }
 
   try {

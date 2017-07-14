@@ -28,10 +28,9 @@ async function create (req, res, next) {
   let protocol
   const newProtocol = {
     user_id: req.body['user_id'],
-    // Need to fix *********************************************************
-    json_protocol: JSON.stringify(req.body['json_protocol']),
-    json_upvotes: JSON.stringify([]),
-    json_downvotes: JSON.stringify([]),
+    json_protocol: {data: req.body['json_protocol']},
+    json_upvotes: {data: []},
+    json_downvotes: {data: []},
   }
 
   try {
@@ -46,10 +45,9 @@ async function update (req, res, next) {
   let protocol
   const id = req.params.id
   const updatedProtocol = {
-    user_id: req.body['user_id'],
-    json_protocol: req.body['json_protocol'],
-    json_upvotes: req.body['json_upvotes'],
-    json_downvotes: req.body['json_downvotes'],
+    json_protocol: {data: req.body['json_protocol']},
+    json_upvotes: {data: req.body['json_upvotes']},
+    json_downvotes: {data: req.body['json_downvotes']},
   }
 
   try {
