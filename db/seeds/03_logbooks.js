@@ -7,7 +7,7 @@ exports.seed = (knex) => {
         mainFocus: 'Strength and power',
         schedule: [
           {
-            date: "2017_7_10",
+            date: "2017_07_10",
             duration: 50,
             warmupNotes: "20' bouldering, feeling strong!",
             protocols: [ 1, 2 ],
@@ -15,7 +15,7 @@ exports.seed = (knex) => {
             completed: true
           },
           {
-            date: "2017_7_11",
+            date: "2017_07_11",
             duration: 50,
             warmupNotes: "30' boulders, feel weak today...",
             protocols: [ 2, 1 ],
@@ -23,7 +23,7 @@ exports.seed = (knex) => {
             completed: false
           },
           {
-            date: "2017_7_20",
+            date: "2017_07_20",
             duration: 30,
             warmupNotes: "",
             protocols: [ 1 ],
@@ -40,7 +40,7 @@ exports.seed = (knex) => {
         mainFocus: 'Strength and power',
         schedule: [
           {
-            date: "2017_7_10",
+            date: "2017_07_10",
             duration: 50,
             warmupNotes: "20' bouldering, feeling strong!",
             protocols: [ 1, 2 ],
@@ -48,7 +48,7 @@ exports.seed = (knex) => {
             completed: true
           },
           {
-            date: "2017_7_11",
+            date: "2017_07_11",
             duration: 50,
             warmupNotes: "30' boulders, feel weak today...",
             protocols: [ 2, 1 ],
@@ -56,7 +56,7 @@ exports.seed = (knex) => {
             completed: false
           },
           {
-            date: "2017_7_20",
+            date: "2017_07_20",
             duration: 30,
             warmupNotes: "",
             protocols: [ 1 ],
@@ -73,7 +73,7 @@ exports.seed = (knex) => {
         mainFocus: 'Strength and power',
         schedule: [
           {
-            date: "2017_7_10",
+            date: "2017_07_10",
             duration: 50,
             warmupNotes: "20' bouldering, feeling strong!",
             protocols: [ 1, 2 ],
@@ -81,7 +81,7 @@ exports.seed = (knex) => {
             completed: true
           },
           {
-            date: "2017_7_11",
+            date: "2017_07_11",
             duration: 50,
             warmupNotes: "30' boulders, feel weak today...",
             protocols: [ 2, 1 ],
@@ -89,7 +89,7 @@ exports.seed = (knex) => {
             completed: false
           },
           {
-            date: "2017_7_20",
+            date: "2017_07_20",
             duration: 30,
             warmupNotes: "",
             protocols: [ 1 ],
