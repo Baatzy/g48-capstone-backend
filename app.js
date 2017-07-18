@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 const app = express();
+const cors = require('cors');
 
 const favicon = require('serve-favicon');
 const logger = require('morgan');
@@ -18,6 +19,7 @@ app.use(require('express-partials')())
 
 app.disable('x-powered-by')
 app.enable('trust proxy')
+app.use(cors())
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
