@@ -2,7 +2,8 @@ exports.seed = (knex) => {
   return knex('protocols').insert([
     {
       id: 1,
-      user_id: 1,
+      author_user_id: 1,
+      author_username: 'Baatzy',
       json_protocol: JSON.stringify({
         name: '10 sec max hangs',
         category: 'Strength',
@@ -17,18 +18,19 @@ exports.seed = (knex) => {
     },
     {
       id: 2,
-      user_id: 2,
+      author_user_id: 1,
+      author_username: 'Baatzy',
       json_protocol: JSON.stringify({
         name: 'Weighted pull-ups',
         category: 'Strength',
-        muscleGroup: 'Upper body',
+        muscleGroup: 'Lats',
         duration: 20,
         description: 'Using a pull up bar, determine your 1RM with added weight. Using the total value of your body weight plus your added 1RM weight, perform 5 reps at 80% that total weight. Rest 5 minutes. Repeat for 2-3 total sets. Maintain 1.5x shoulder-width hand spacing, make sure to retract and pull down your shoulders to stablize your humeral head positions, and strive for a complete pulling motion from a near straight arm at the bottom of the rep to full head above the bar at the top of the rep.'
       }),
-      json_upvotes: JSON.stringify([]),
-      json_downvotes: JSON.stringify([
+      json_upvotes: JSON.stringify([
         {userId: 1, username: 'Baatzy'}
-      ])
+      ]),
+      json_downvotes: JSON.stringify([])
     }
   ]).then(() => {
     return knex.raw(

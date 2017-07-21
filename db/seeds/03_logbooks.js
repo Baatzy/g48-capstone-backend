@@ -37,7 +37,7 @@ exports.seed = (knex) => {
       id: 2,
       user_id: 2,
       json_logbook: JSON.stringify({
-        mainFocus: 'Strength and power',
+        mainFocus: 'Pullups and the American way',
         schedule: [
           {
             date: "2017_07_10",
@@ -70,7 +70,7 @@ exports.seed = (knex) => {
       id: 3,
       user_id: 3,
       json_logbook: JSON.stringify({
-        mainFocus: 'Strength and power',
+        mainFocus: 'Pockets and sausages',
         schedule: [
           {
             date: "2017_07_10",
