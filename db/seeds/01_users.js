@@ -13,7 +13,9 @@ exports.seed = (knex) => {
       max_boulder: 'V11',
       max_sport: '5.13c',
       max_trad: 'N/A',
-      last_active: 'LAST_ACTIVE_VALUE'
+      last_active: 'LAST_ACTIVE_VALUE',
+      fav_protocols: JSON.stringify([1])
+
     },
     {
       id: 2,
@@ -28,7 +30,8 @@ exports.seed = (knex) => {
       max_boulder: 'V14',
       max_sport: '5.14b',
       max_trad: '5.13a',
-      last_active: 'LAST_ACTIVE_VALUE'
+      last_active: 'LAST_ACTIVE_VALUE',
+      fav_protocols: JSON.stringify([1])
     },
     {
       id: 3,
@@ -43,7 +46,8 @@ exports.seed = (knex) => {
       max_boulder: '',
       max_sport: '',
       max_trad: '',
-      last_active: 'LAST_ACTIVE_VALUE'
+      last_active: 'LAST_ACTIVE_VALUE',
+      fav_protocols: JSON.stringify([1])
     }
   ]).then(() => {
     return knex.raw(

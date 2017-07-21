@@ -13,6 +13,7 @@ exports.up = (knex) => {
     table.string('max_sport').defaultTo('')
     table.string('max_trad').defaultTo('')
     table.string('last_active').defaultTo('')
+    table.jsonb('fav_protocols')
     table.timestamps(true, true)
   })
 }
