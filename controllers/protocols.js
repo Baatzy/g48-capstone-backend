@@ -29,7 +29,7 @@ async function create (req, res, next) {
   const newProtocol = {
     author_user_id: req.body.author_user_id,
     author_username: req.body.author_username,
-    json_protocol: JSON.stringify(req.body['json_protocol']),
+    json_protocol: JSON.stringify(req.body.json_protocol),
     json_upvotes: JSON.stringify([]),
     json_downvotes: JSON.stringify([]),
   }
@@ -46,9 +46,9 @@ async function update (req, res, next) {
   let protocol
   const id = req.params.id
   const updatedProtocol = {
-    json_protocol: {data: req.body['json_protocol']},
-    json_upvotes: {data: req.body['json_upvotes']},
-    json_downvotes: {data: req.body['json_downvotes']},
+    json_protocol: JSON.stringify(req.body.json_protocol),
+    json_upvotes: JSON.stringify(req.body.json_upvotes),
+    json_downvotes: JSON.stringify(req.body.json_downvotes),
   }
 
   try {

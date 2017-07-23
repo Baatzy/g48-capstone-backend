@@ -40,7 +40,7 @@ async function create (req, res, next) {
 
   try {
     user = await User.postNew(newUser)
-    newLogbook['user_id'] = user[0].id
+    newLogbook.user_id = user[0].id
     logbook = await Logbook.postNew(newLogbook)
     res.send(user)
   } catch (err) {
@@ -55,14 +55,14 @@ async function update (req, res, next) {
     username: req.body.username,
     email: req.body.email,
     password: req.body.password,
-    first_name: req.body['first_name'],
-    last_name: req.body['last_name'],
+    first_name: req.body.first_name,
+    last_name: req.body.last_name,
     age: req.body.age,
     location: req.body.location,
     bio: req.body.bio,
-    max_boulder: req.body['max_boulder'],
-    max_sport: req.body['max_sport'],
-    max_trad: req.body['max_trad'],
+    max_boulder: req.body.max_boulder,
+    max_sport: req.body.max_sport,
+    max_trad: req.body.max_trad,
   }
 
   try {

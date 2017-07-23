@@ -27,8 +27,8 @@ async function show (req, res, next) {
 async function create (req, res, next) {
   let logbook
   const newLogbook = {
-    user_id: req.body['user_id'],
-    json_logbook: {data: req.body['json_logbook']},
+    user_id: req.body.user_id,
+    json_logbook: JSON.stringify(req.body.json_logbook),
   }
 
   try {
@@ -43,7 +43,7 @@ async function update (req, res, next) {
   let logbook
   const id = req.params.id
   const updatedLogbook = {
-    json_logbook: {data: req.body['json_logbook']},
+    json_logbook: JSON.stringify(req.body.json_logbook),
   }
 
   try {
