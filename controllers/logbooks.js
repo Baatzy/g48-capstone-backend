@@ -8,7 +8,7 @@ async function index (req, res, next) {
     logbook = await Logbook.indexAll()
     res.send(logbook)
   } catch (err) {
-    res.send(err)
+    res.status(500).send(err)
   }
 }
 
@@ -20,7 +20,7 @@ async function show (req, res, next) {
     logbook = await Logbook.showById(id)
     res.send(logbook)
   } catch (err) {
-    res.send(err)
+    res.status(500).send(err)
   }
 }
 
@@ -35,7 +35,7 @@ async function create (req, res, next) {
     logbook = await Logbook.postNew(newLogbook)
     res.send(logbook)
   } catch (err) {
-    res.send(err)
+    res.status(500).send(err)
   }
 }
 
@@ -50,7 +50,7 @@ async function update (req, res, next) {
     logbook = await Logbook.patchById(id, updatedLogbook)
     res.send(logbook)
   } catch (err) {
-    res.send(err)
+    res.status(500).send(err)
   }
 }
 
@@ -62,7 +62,7 @@ async function destroy (req, res, next) {
     deletedLogbook = await Logbook.deleteById(id)
     res.send(deletedLogbook)
   } catch (err) {
-    res.send(err)
+    res.status(500).send(err)
   }
 }
 

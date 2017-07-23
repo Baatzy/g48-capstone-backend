@@ -9,7 +9,7 @@ async function index (req, res, next) {
     users = await User.indexAll()
     res.send(users)
   } catch (err) {
-    res.send(err)
+    res.status(500).send(err)
   }
 }
 
@@ -21,7 +21,7 @@ async function show (req, res, next) {
     user = await User.showById(id)
     res.send(user)
   } catch (err) {
-    res.send(err)
+    res.status(500).send(err)
   }
 }
 
@@ -44,7 +44,7 @@ async function create (req, res, next) {
     logbook = await Logbook.postNew(newLogbook)
     res.send(user)
   } catch (err) {
-    res.send(err)
+    res.status(500).send(err)
   }
 }
 
@@ -69,7 +69,7 @@ async function update (req, res, next) {
     user = await User.patchById(id, updatedUser)
     res.send(user)
   } catch (err) {
-    res.send(err)
+    res.status(500).send(err)
   }
 }
 
@@ -81,7 +81,7 @@ async function destroy (req, res, next) {
     deletedUser = await User.deleteById(id)
     res.send(deletedUser)
   } catch (err) {
-    res.send(err)
+    res.status(500).send(err)
   }
 }
 
