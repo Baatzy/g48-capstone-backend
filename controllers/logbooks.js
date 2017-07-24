@@ -40,14 +40,13 @@ async function create (req, res, next) {
 }
 
 async function update (req, res, next) {
-  let logbook
   const id = req.params.id
   const updatedLogbook = {
     json_logbook: JSON.stringify(req.body.json_logbook),
   }
 
   try {
-    logbook = await Logbook.patchById(id, updatedLogbook)
+    let logbook = await Logbook.patchById(id, updatedLogbook)
     res.send(logbook)
   } catch (err) {
     res.status(500).send(err)
