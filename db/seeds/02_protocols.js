@@ -2,8 +2,8 @@ exports.seed = (knex) => {
   return knex('protocols').insert([
     {
       id: 1,
-      author_user_id: 1,
-      author_username: 'Baatzy',
+      author_user_id: 2,
+      author_username: 'Meliseymo',
       json_protocol: JSON.stringify({
         name: '10 sec max hangs',
         category: 'Strength',
@@ -31,7 +31,35 @@ exports.seed = (knex) => {
         {userId: 1, username: 'Baatzy'}
       ]),
       json_downvotes: JSON.stringify([])
-    }
+    },
+    {
+      id: 3,
+      author_user_id: 3,
+      author_username: 'FrankenClimber',
+      json_protocol: JSON.stringify({
+        name: 'Hamstring stretch',
+        category: 'Self Care',
+        muscleGroup: 'Legs',
+        duration: 15,
+        description: 'Lay on the ground on your back with butt directly up against a wall. Prop legs up against the wall and keep them as straight as possible. If done correctly, you should feel a good hamstring stretch that requires little to no muscular activation. Perform two sets of 5 minutes.'
+      }),
+      json_upvotes: JSON.stringify([]),
+      json_downvotes: JSON.stringify([])
+    },
+    {
+      id: 4,
+      author_user_id: 2,
+      author_username: 'Meliseymo',
+      json_protocol: JSON.stringify({
+        name: 'Core Burnout',
+        category: 'Strength Endurance',
+        muscleGroup: 'Core',
+        duration: 20,
+        description: 'A simple floormat exercise, valuable for your core endurance. Taking no breaks between these exercises: perform 10 ice-cream makers, hold a 1 min plank, and finish with 1 min of V-situps. Rest 5 minutes, then perform everything a second time.'
+      }),
+      json_upvotes: JSON.stringify([]),
+      json_downvotes: JSON.stringify([])
+    },
   ]).then(() => {
     return knex.raw(
       "SELECT setval('protocols_id_seq', (SELECT MAX(id) FROM protocols));"

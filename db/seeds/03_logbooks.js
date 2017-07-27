@@ -4,30 +4,30 @@ exports.seed = (knex) => {
       id: 1,
       user_id: 1,
       json_logbook: JSON.stringify({
-        mainFocus: 'Strength and power',
+        mainFocus: 'More strength and power!',
         schedule: [
           {
-            date: "2017_07_10",
+            date: "2017_07_15",
             duration: 50,
             warmupNotes: "20' bouldering, feeling strong!",
-            protocols: [ 1, 2 ],
+            protocols: [ 1, 2, 4 ],
             sessionNotes: "New max hang baseline of +85! Today was a great training day, felt really strong.",
             completed: true
           },
           {
-            date: "2017_07_11",
+            date: "2017_07_19",
             duration: 50,
             warmupNotes: "30' boulders, feel weak today...",
-            protocols: [ 2, 1 ],
+            protocols: [ 2, 3, 4 ],
             sessionNotes: "I felt really tired today. Had to bail during the warmup!",
             completed: false
           },
           {
-            date: "2017_07_20",
+            date: "2017_07_22",
             duration: 30,
             warmupNotes: "",
-            protocols: [ 1 ],
-            sessionNotes: "",
+            protocols: [ 1, 2, 3, 4 ],
+            sessionNotes: "Huge day, and felt really good! Did all my favorite and hardest workouts! I deserve some ice cream.",
             completed: null
           }
         ]
