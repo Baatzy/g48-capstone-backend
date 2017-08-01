@@ -12,7 +12,7 @@ Basement Windows was built using a clean MVC structure, JSON column type in Post
 Resources are `/users`, `/logbooks`, `/protocols`.
 
 
-### This is the back end API for the app Boardroom
+### This is the back-end API for the app Boardroom
 This repository contains no views. The primary Boardroom project README can be found here:<br> https://github.com/Baatzy/g48-capstone-frontend
 
 ### Installation
