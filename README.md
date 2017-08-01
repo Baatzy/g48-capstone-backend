@@ -1,9 +1,19 @@
 # Basement Windows
 
-Basement Windows was built using a clean MVC structure and ES7 syntax.
+Basement Windows was built using a clean MVC structure, JSON column type in PostgresQL, and ES7 syntax.
+
+### Endpoints
+`GET: /[RESOURCE]`<br>
+`GET: /[RESOURCE]/:id`<br>
+`POST: /[RESOURCE]`<br>
+`PUT: /[RESOURCE]/:id`<br>
+`DELETE: /[RESOURCE]/:id`<br>
+
+Resources are `/users`, `/logbooks`, `/protocols`.
+
 
 ### This is the back end API for the app Boardroom
-This repository contains no views. The primary Boardroom project README can be found here: https://github.com/Baatzy/g48-capstone-frontend
+This repository contains no views. The primary Boardroom project README can be found here:<br> https://github.com/Baatzy/g48-capstone-frontend
 
 ### Installation
 The repository can be downloaded and run as a web application for development/testing:
@@ -22,7 +32,7 @@ The repository can be downloaded and run as a web application for development/te
 * ES7
 
 ### Project front-end
-Front-end repository can be found at:
+Front-end repository can be found at:<br>
 https://github.com/Baatzy/g48-capstone-frontend
 
 ##### Built August 2017 for the Galvanize g48 capstone
